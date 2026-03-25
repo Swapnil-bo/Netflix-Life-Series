@@ -454,3 +454,60 @@ body { background: var(--black); color: var(--text); overflow-x: hidden; }
   letter-spacing: 0.06em; margin-bottom: 28px;
 }
 .banner-actions { display: flex; gap: 12px; }
+
+/* ── Show Card Content ── */
+.showcard-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 64px;
+  display: flex; flex-direction: column; gap: 56px;
+}
+
+.sc-section { display: flex; flex-direction: column; gap: 20px; }
+
+.sc-label {
+  font-size: 0.65rem; letter-spacing: 0.3em;
+  color: var(--red); text-transform: uppercase;
+}
+
+/* Logline */
+.sc-logline {
+  font-size: 1.3rem; line-height: 1.7;
+  color: #ccc; font-style: italic;
+  border-left: 3px solid var(--red);
+  padding-left: 24px; max-width: 680px;
+}
+
+/* Protagonist */
+.protagonist-card {
+  display: flex; gap: 28px; align-items: flex-start;
+  background: #111; border: 1px solid var(--border);
+  border-radius: 6px; padding: 28px;
+}
+.proto-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; color: #fff; flex-shrink: 0;
+}
+.proto-info { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.proto-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; letter-spacing: 0.05em; color: var(--text);
+}
+.proto-meta { display: flex; gap: 8px; }
+.proto-tag {
+  font-size: 0.7rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px; border-radius: 2px;
+}
+.proto-rows { display: flex; flex-direction: column; gap: 10px; }
+.proto-row { display: flex; gap: 16px; align-items: baseline; }
+.proto-row-label {
+  font-size: 0.65rem; letter-spacing: 0.15em;
+  color: var(--red); text-transform: uppercase;
+  min-width: 100px; flex-shrink: 0;
+}
+.proto-row-value { font-size: 0.9rem; color: #aaa; line-height: 1.5; }
