@@ -27,6 +27,43 @@ function ShowCard({ data, onReset }) {
           </div>
         </div>
   
+        {/* Content Section */}
+        <div className="showcard-content">
+  
+          {/* Logline */}
+          <section className="sc-section">
+            <p className="sc-label">● THE STORY</p>
+            <p className="sc-logline">"{data.logline}"</p>
+          </section>
+  
+          {/* Protagonist */}
+          <section className="sc-section">
+            <p className="sc-label">● PROTAGONIST</p>
+            <div className="protagonist-card">
+              <div className="proto-avatar">
+                {data.protagonist.name.charAt(0)}
+              </div>
+              <div className="proto-info">
+                <h3 className="proto-name">{data.protagonist.name}</h3>
+                <div className="proto-meta">
+                  <span className="proto-tag">Age: {data.protagonist.age}</span>
+                </div>
+                <div className="proto-rows">
+                  <div className="proto-row">
+                    <span className="proto-row-label">FATAL FLAW</span>
+                    <span className="proto-row-value">{data.protagonist.flaw}</span>
+                  </div>
+                  <div className="proto-row">
+                    <span className="proto-row-label">DARK SECRET</span>
+                    <span className="proto-row-value">{data.protagonist.secret}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+  
+        </div>
+  
       </div>
     )
   }
