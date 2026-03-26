@@ -1268,3 +1268,197 @@ body { background: var(--black); color: var(--text); overflow-x: hidden; }
   font-size: 0.7rem; color: #444;
   letter-spacing: 0.08em; text-align: center;
 }
+
+/* ══════════════════════════════════════
+   MY SHOWS GALLERY
+══════════════════════════════════════ */
+
+.ms-overlay {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeUp 0.35s ease both;
+}
+.ms-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+}
+.ms-panel {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 720px;
+  max-height: 88vh; overflow-y: auto;
+  background: #0c0c0c;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow:
+    0 0 0 1px rgba(229,9,20,0.08),
+    0 40px 120px rgba(0,0,0,0.9),
+    0 0 80px rgba(229,9,20,0.06);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(229,9,20,0.2) transparent;
+}
+.ms-side-accent {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 3px; border-radius: 8px 0 0 8px;
+  background: linear-gradient(to bottom, var(--red), rgba(229,9,20,0.2), transparent);
+}
+
+/* Header */
+.ms-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 28px;
+}
+.ms-header-left { display: flex; flex-direction: column; gap: 6px; }
+.ms-eyebrow {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.6rem; letter-spacing: 0.3em;
+  color: var(--red); text-transform: uppercase;
+}
+.ms-eyebrow-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--red);
+  animation: recPulse 1.5s ease-in-out infinite;
+}
+.ms-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.6rem; line-height: 0.95;
+  letter-spacing: 0.03em; color: var(--text);
+}
+.ms-subtitle { font-size: 0.82rem; color: #555; }
+.ms-close {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: #666; font-size: 0.85rem;
+  width: 36px; height: 36px; border-radius: 4px;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-close:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+/* Divider */
+.ms-divider {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+}
+.ms-divider-line { flex: 1; height: 1px; background: var(--border); }
+.ms-divider-text {
+  font-size: 0.58rem; letter-spacing: 0.28em;
+  color: #333; text-transform: uppercase; flex-shrink: 0;
+}
+
+/* Empty state */
+.ms-empty {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  padding: 60px 20px; text-align: center;
+}
+.ms-empty-icon { font-size: 2.5rem; opacity: 0.4; }
+.ms-empty-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; color: #333; letter-spacing: 0.05em;
+}
+.ms-empty-sub { font-size: 0.82rem; color: #444; max-width: 280px; line-height: 1.6; }
+.ms-empty-cta {
+  margin-top: 8px;
+  background: var(--red); color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  padding: 12px 24px; border: none;
+  border-radius: 3px; cursor: pointer;
+  transition: background 0.2s;
+}
+.ms-empty-cta:hover { background: var(--red-dark); }
+
+/* Grid */
+.ms-grid {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.ms-card {
+  display: flex; gap: 20px; align-items: center;
+  background: #0f0f0f; border: 1px solid var(--border);
+  border-radius: 6px; padding: 18px 20px;
+  transition: border-color 0.2s, transform 0.2s;
+  animation: fadeUp 0.4s ease both;
+}
+.ms-card:hover {
+  border-color: rgba(229,9,20,0.25);
+  transform: translateX(3px);
+}
+
+/* Poster */
+.ms-card-poster {
+  width: 60px; height: 84px; flex-shrink: 0;
+  background: linear-gradient(135deg, #1a0303, #0d0d0d);
+  border: 1px solid rgba(229,9,20,0.15);
+  border-radius: 4px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-card-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; color: rgba(229,9,20,0.2);
+}
+.ms-card-shine {
+  position: absolute; top: -50%; left: -50%;
+  width: 60%; height: 200%;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%);
+  transform: rotate(15deg);
+}
+.ms-card-rating {
+  position: absolute; bottom: 4px; right: 4px;
+  font-size: 0.42rem; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1px 4px; border-radius: 1px;
+}
+
+/* Info */
+.ms-card-info { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ms-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; letter-spacing: 0.06em;
+  color: var(--text); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.ms-card-genre {
+  font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--red);
+}
+.ms-card-tagline {
+  font-size: 0.78rem; color: #555;
+  font-style: italic; line-height: 1.4;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ms-card-date {
+  font-size: 0.62rem; color: #333;
+  letter-spacing: 0.06em; margin-top: 4px;
+}
+
+/* Actions */
+.ms-card-actions {
+  display: flex; flex-direction: column; gap: 8px;
+  flex-shrink: 0; align-items: flex-end;
+}
+.ms-card-view {
+  background: rgba(229,9,20,0.1);
+  border: 1px solid rgba(229,9,20,0.2);
+  color: var(--text); font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem; padding: 8px 14px;
+  border-radius: 3px; cursor: pointer;
+  white-space: nowrap; letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.ms-card-view:hover {
+  background: var(--red); border-color: var(--red);
+}
+.ms-card-delete {
+  background: none; border: 1px solid rgba(255,255,255,0.05);
+  color: #333; font-size: 0.72rem;
+  width: 30px; height: 30px; border-radius: 3px;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-card-delete:hover {
+  border-color: rgba(229,9,20,0.3); color: var(--red);
+}

@@ -5,6 +5,7 @@ import LoadingScreen from './components/LoadingScreen'
 import ShowCard from './components/ShowCard'
 import { generateShowConcept } from './utils/ollama'
 import { saveShow, getShows, deleteShow } from './utils/storage'
+import MyShows from './components/MyShows'
 
 const GENRES = ["Drama", "Thriller", "Dark Comedy", "Mystery", "Crime Saga"]
 
@@ -38,6 +39,7 @@ function App() {
   const [showData, setShowData]   = useState(null)
   const [error, setError]         = useState(null)
   const [mousePos, setMousePos]   = useState({ x: 50, y: 50 })
+  const [showMyShows, setShowMyShows] = useState(false)
   const heroRef = useRef(null)
 
   // Genre ticker
@@ -98,7 +100,13 @@ function App() {
         <div className="logo"><span className="logo-n">N</span>ETLIFE</div>
         <div className="nav-center">
           <span className="nav-link nav-link-active">Home</span>
-          <span className="nav-link">My Shows</span>
+          <span
+            className="nav-link"
+            onClick={() => setShowMyShows(true)}
+            style={{cursor:'pointer'}}
+          >
+            My Shows
+          </span>
           <span className="nav-link">New & Popular</span>
         </div>
         <div className="nav-right">
@@ -266,6 +274,15 @@ function App() {
 
       {showForm    && <InputForm onSubmit={handleFormSubmit} />}
       {loading     && <LoadingScreen />}
+      {showMyShows && (
+        <MyShows
+          onClose={() => setShowMyShows(false)}
+          onView={(data) => {
+            setShowData(data)
+            setShowMyShows(false)
+          }}
+        />
+      )}
     </div>
   )
 }
