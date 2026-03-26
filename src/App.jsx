@@ -4,6 +4,7 @@ import InputForm from './components/InputForm'
 import LoadingScreen from './components/LoadingScreen'
 import ShowCard from './components/ShowCard'
 import { generateShowConcept } from './utils/ollama'
+import { saveShow, getShows, deleteShow } from './utils/storage'
 
 const GENRES = ["Drama", "Thriller", "Dark Comedy", "Mystery", "Crime Saga"]
 
@@ -77,6 +78,7 @@ function App() {
     setError(null)
     try {
       const data = await generateShowConcept(fields)
+      saveShow(data, fields)   // ← add this line
       setShowData(data)
     } catch (err) {
       setError(err.message)
