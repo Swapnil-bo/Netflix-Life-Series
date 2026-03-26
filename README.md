@@ -1,12 +1,6 @@
 <div align="center">
-```
-███╗   ██╗███████╗████████╗██╗     ██╗███████╗███████╗
-████╗  ██║██╔════╝╚══██╔══╝██║     ██║██╔════╝██╔════╝
-██╔██╗ ██║█████╗     ██║   ██║     ██║█████╗  █████╗  
-██║╚██╗██║██╔══╝     ██║   ██║     ██║██╔══╝  ██╔══╝  
-██║ ╚████║███████╗   ██║   ███████╗██║██║     ███████╗
-╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚══════╝╚═╝╚═╝     ╚══════╝
-```
+
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=800&size=55&pause=1000&color=E50914&center=true&vCenter=true&width=500&height=80&lines=N+E+T+L+I+F+E" alt="NETLIFE" />
 
 ### *Your Life. Dramatized. Streamed. Forever.*
 
