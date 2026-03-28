@@ -37,10 +37,10 @@ No cloud. No API keys. No subscription. No data leaving your device. Just you, a
 <img src="screenshots/1-landing.png" width="100%" />
 <br/><br/>
 
-<img src="screenshots/2-loading.png" width="100%" />
+<img src="screenshots/2-form.png" width="100%" />
 <br/><br/>
 
-<img src="screenshots/3-form.png" width="100%" />
+<img src="screenshots/3-loading.png" width="100%" />
 <br/><br/>
 
 <img src="screenshots/4-banner.png" width="100%" />
